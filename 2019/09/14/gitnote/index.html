@@ -4,8 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="mynote, sikiGray，赵，编程语言，算法">
-    <meta name="description" content="mynote | sikiGray">
+    <meta name="keywords" content="Git基本操作01, sikiGray，赵，编程语言，算法">
+    <meta name="description" content="一、基本操作011、git init
+初始化，使用后目录添加.git文件，用来管理当前目录下的文件。
+2、git status
+查看git仓库的状态
+Git对文件划分状态：
+​    工作区：存放新增和修改的文件
+​    暂存区：存放下次">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mynote | sikiGray</title>
+    <title>Git基本操作01 | sikiGray</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        mynote
+                        Git基本操作01
                     </div>
                 </div>
             </div>
@@ -377,12 +383,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git笔记/" target="_blank">
+                                <span class="chip bg-color">Git笔记</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Git/" class="post-category" target="_blank">
+                                Git
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -397,14 +416,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        0
+                        1.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -420,7 +439,74 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h4 id="一、基本操作01"><a href="#一、基本操作01" class="headerlink" title="一、基本操作01"></a>一、基本操作01</h4><p><strong>1、git init</strong></p>
+<p>初始化，使用后目录添加.git文件，用来管理当前目录下的文件。</p>
+<p><strong>2、git status</strong></p>
+<p>查看git仓库的状态</p>
+<p>Git对文件划分状态：</p>
+<p>​    工作区：存放新增和修改的文件</p>
+<p>​    暂存区：存放下次要提交的文件清单</p>
+<p>​    git仓库：存放已提交的文件</p>
+<p><strong>3、git add files</strong></p>
+<p>将工作区里新修改的文件标记一下track,然后生成快照，记录下来，放到暂存区中。并不是直接提交到Git仓库中</p>
+<p>​    工作区——&gt;暂存区</p>
+<p><strong>4、git commit -m [“提交说明”]</strong></p>
+<p>将暂存区中的文件(暂存区中的文件消失）提交到Git仓库中</p>
+<p>​    暂存区——&gt;Git仓库</p>
+<h4 id="二、基本操作02"><a href="#二、基本操作02" class="headerlink" title="二、基本操作02"></a>二、基本操作02</h4><p><strong>1、git help/git help [命令]</strong></p>
+<p>查看命令的用法或作用</p>
+<p><strong>2、git log</strong></p>
+<p>查看项目的历史提交记录</p>
+<p><strong>3、git log -[数字]</strong></p>
+<p>仅查看最近几条提交记录</p>
+<p><strong>4、git commit –amend</strong></p>
+<p>(1)可以修改最近一次的提交说明</p>
+<p>(2)可以将新的文件与最近的一次提交当作统一提交（如当你少提交了一个文件时，可以先将少提交的文件git add,然后使用git commit –amend命令，达到统一提交的目的）</p>
+<p><strong>5、git add .</strong></p>
+<p>将新的工作区文件全部添加到暂存区中</p>
+<p><strong>6、git reset HEAD [文件名]</strong></p>
+<p>将暂存区的某个文件移除</p>
+<p><strong>7、git reset –soft HEAD~</strong></p>
+<p>撤销最近一次commit操作，相应的文件重回暂存区</p>
+<p><strong>7.1、git reset –soft [版本号]</strong></p>
+<p>撤销该版本之前的所有commit操作，相应文件重回暂存区</p>
+<p><strong>8、git reset –hard HEAD~</strong></p>
+<p>撤销最近一次add和commit操作，并且对文件的修改也会消失（直接回退到上一个版本）</p>
+<p><strong>8.1、git reset –hard [版本号]</strong></p>
+<p>跳到到指定版本（可以是之前的版本，也可以是之后的版本，实质上是HEAD指针的移动），版本号可通过git log查看</p>
+<h4 id="三、Git分支概念"><a href="#三、Git分支概念" class="headerlink" title="三、Git分支概念"></a>三、Git分支概念</h4><p>HEAD总是指向最近一次commit的文件，当你再次进行提交时，HEAD指向这次提交的文件，而这次提交的文件指向前一次提交的文件。</p>
+<h4 id="四、Git分支的创建、切换、状态"><a href="#四、Git分支的创建、切换、状态" class="headerlink" title="四、Git分支的创建、切换、状态"></a>四、Git分支的创建、切换、状态</h4><p><strong>1、git branch</strong></p>
+<p>展示所有的分支，当前所在分支前有*</p>
+<p><strong>2、git branch [新分支名称]</strong></p>
+<p>创建一个新的分支，该分支指向最后一个commit的对象，但HEAD的指向不变</p>
+<p><strong>3、git checkout [分支名称]</strong></p>
+<p>切换分支，即改变HEAD指向的分支</p>
+<h4 id="五、分支的合并"><a href="#五、分支的合并" class="headerlink" title="五、分支的合并"></a>五、分支的合并</h4><p>master分支为主分支，一般不用来开发，主要用来合并其他分支<br>分支的创建与所在目录无关</p>
+<p><strong>1、git checkout -b [新分支名称]</strong></p>
+<p>直接创建一个新的分支，并切换到这个分支，相当于：</p>
+<p>​    git branch [新分支名称]</p>
+<p>​    git checkout [新分支名称]</p>
+<p><strong>2、git merge [分支名称]</strong></p>
+<p>将主分支合并到该分支上</p>
+<p><strong>3、git branch -d [分支名称]</strong></p>
+<p>删除这个分支</p>
+<p>（总结）合并分支的过程：</p>
+<p>​    1、切换回master分支上     git checkout master</p>
+<p>​    2、合并master分支与要合并的分支    git merge [次分支名称]</p>
+<p>​    3、删除要合并的次要分支    git branch -d [次要分支名称]</p>
+<h4 id="六、Git分支的暂存"><a href="#六、Git分支的暂存" class="headerlink" title="六、Git分支的暂存"></a>六、Git分支的暂存</h4><p>&emsp;当我们在一个分支修改文件时，如果修改后未提交，则我们无法切换到其他分支，为解决这个问题，使用Git中文件暂存的命令</p>
+<p><strong>1、git stash</strong></p>
+<p>可以使修改后未提交的文件，暂时“隐藏”起来，使得我们可以在此时切换分支</p>
+<p><strong>2、git stash apply</strong></p>
+<p>可以使最近一次暂存的文件复原，得以继续进行工作</p>
+<p><strong>3、git stash apply [暂存编号]</strong></p>
+<p>可以使制定的暂存文件复原</p>
+<p><strong>4、git stash list</strong></p>
+<p>将所有暂存的文件列出来，可以看到它们的暂存编号</p>
+<h4 id="七、解决Git分支合并冲突"><a href="#七、解决Git分支合并冲突" class="headerlink" title="七、解决Git分支合并冲突"></a>七、解决Git分支合并冲突</h4><p>&emsp;当次要分支同时对同一个文件进行修改后，在合并过程中会出现冲突</p>
+<p>解决方法如下：</p>
+<p>​    打开有冲突的文件，选择要保留的内容，即可解决冲突。</p>
+
             </div>
             <hr/>
 
@@ -578,9 +664,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《mynote》
+                    《Git基本操作01》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/14/mynote/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/14/gitnote/" property="cc:attributionName"
                rel="cc:attributionURL">
                 sikiGray
             </a> 采用
@@ -625,19 +711,25 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/09/14/mynote/">
+                <a href="/2019/09/14/gitnote/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mynote">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Git基本操作01">
                         
-                        <span class="card-title">mynote</span>
+                        <span class="card-title">Git基本操作01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            一、基本操作011、git init
+初始化，使用后目录添加.git文件，用来管理当前目录下的文件。
+2、git status
+查看git仓库的状态
+Git对文件划分状态：
+​    工作区：存放新增和修改的文件
+​    暂存区：存放下次
                         
                     </div>
                     <div class="publish-info">
@@ -646,13 +738,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            sikiGray
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Git/" class="post-category" target="_blank">
+                                    Git
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git笔记/" target="_blank">
+                        <span class="chip bg-color">Git笔记</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -807,7 +911,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">73</span>&nbsp;字
+                class="white-color">1.1k</span>&nbsp;字
             
             
             
