@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sikiGray.github.io/"/>
-  <updated>2019-09-15T13:42:02.231Z</updated>
+  <updated>2019-09-16T11:00:41.528Z</updated>
   <id>http://sikiGray.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>渐近时间复杂度</title>
+    <link href="http://sikiGray.github.io/2019/09/16/shu-ju-jie-gou-suan-fa-de-jian-jin-fen-xi-jian-jin-shi-jian-fu-za-du/"/>
+    <id>http://sikiGray.github.io/2019/09/16/shu-ju-jie-gou-suan-fa-de-jian-jin-fen-xi-jian-jin-shi-jian-fu-za-du/</id>
+    <published>2019-09-16T10:53:58.887Z</published>
+    <updated>2019-09-16T11:00:41.528Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;﻿&amp;gt;&amp;emsp;算法的渐进分析（asymptotic algorithm analysis）简称算法分析。算法分析直接与它所求解的问题的规模 n 有关，因此，通常将问题规模作为分析的参数，求算法的时间和空间开销与问题规模的关系。&lt;/p&gt;
+&lt;h1
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://sikiGray.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="时间复杂度" scheme="http://sikiGray.github.io/tags/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>Git基本操作01</title>

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>渐近时间复杂度</title>
+      <link href="/2019/09/16/shu-ju-jie-gou-suan-fa-de-jian-jin-fen-xi-jian-jin-shi-jian-fu-za-du/"/>
+      <url>/2019/09/16/shu-ju-jie-gou-suan-fa-de-jian-jin-fen-xi-jian-jin-shi-jian-fu-za-du/</url>
+      
+        <content type="html"><![CDATA[<p>﻿&gt;&emsp;算法的渐进分析（asymptotic algorithm analysis）简称算法分析。算法分析直接与它所求解的问题的规模 n 有关，因此，通常将问题规模作为分析的参数，求算法的时间和空间开销与问题规模的关系。</p><h1 id="渐进的时间复杂度"><a href="#渐进的时间复杂度" class="headerlink" title="渐进的时间复杂度"></a>渐进的时间复杂度</h1><p>&emsp;计算程序步数的目的是想比较两个或多个完成相同功能的程序的时间复杂度，并估计当问题规模变化时，程序的运行时间如何随之变化。<br>&emsp;要确定一个程序的准确的程序步数是非常困难的，而且也不是很必要。因为程序步数这个概念本身不是一个精确的概念。例如，赋值语句 x=a 和 x=a+b<em>(c-d)-e/f 居然具有相同的程序步数。<br>&emsp;由于程序步数不能确切的反映运行时间，所以用精确的程序步数来比较两个程序，其结果不一定有价值。前面讨论迭代求和程序与递归求和程序的程序步数时，程序步数为 3n+2 的程序反而比程序步数为 3n+4 的程序运行时间多。但是，当两个程序的程序步数相差很大时，例如一个是 $\lceil\log_2(n+1)\rceil$,另一个是  $n</em>(n-1)/2$ 时，明显后者比前者运行时间多。<br>&emsp;因此，如果精确计算有困难，我们只要能够得出一个是 $\log_2n$ 的数量级，一个是 $n^2$的数量级，后者比前者运行时间多的结论，也能达到分析的目的。</p><h1 id="大-O-渐进表示"><a href="#大-O-渐进表示" class="headerlink" title="大 $O$ 渐进表示"></a>大 $O$ 渐进表示</h1><p>&emsp; 要全面分析一个算法，需要考虑算法在最坏情况下的时间代价，在最后情况下的时间代价，在平均情况下的时间代价。<strong>对于最坏情况</strong>，主要采用大 $O$ 表示法来描述。<br>&emsp; 大 $O$ 表示法的一般前提是：当且仅当存在正整数 $c$ 和 $n_0$,使得 $T(n)\leq cf(n)$，使得所有的 $n\geq n_0$ 成立，则称该算法的时间增长率在 $O(f(n))$ 中，记为 $T(n)=O(f(n))$ 。<br>&emsp; 使用大 $O$ 表示法时需要考虑关键操作的程序步数。如果最后需要给出的时渐进值，可直接考虑关键操作的程序步数，找出其与 $n$ 的函数关系 $f(n)$ ，从而得到渐进时间复杂度。</p><p>接下来，根据大 $O$ 表示法来看看接下来的例子。<br>1、（线性函数）考察 $T(n)=3n+2$。<br>$$T(n)=O(n)$$<br>2、（平方函数）考察 $T(n)=10n^2+4n+2$<br>$$T(n)=O(n^2)$$<br>3、（指数函数）考察 $T(n)=6*2^n+n^2$<br>$$T(n)=O(2^n)$$<br>4、（常数函数）考察 $T(n)=9$<br>$$T(n)=O(1)$$</p><p><strong>为了更好在具体情况下使用大 $O$ 表示法，我们需要知道大 $O$ 表示法的几个规则。</strong></p><p><strong>1、加法规则：</strong> 当两个并列的的程序段的时间代价分别为为 $T_1(n)=O(f(n))$ 和 $T_2(m)=O(g(m))$ 时，那么将两个程序段连在一起后整个程序段的时间代价为<br>$$T(n,m)=T_1(n)+T_2(m)=O(\max {f(n),g(m)} )$$<br>所谓 $\max{f(n),g(m)}$ 是指当 $n$ 和 $m$ 充分大时取 $f(n)$ 与 $g(m)$ 中的最大值。在这个意义下显然有如下关系：<br>$$c&lt;\log_2n&lt;n&lt;n\log_2n&lt;n^2&lt;n^3&lt;2^n&lt;3^n&lt;n!$$</p><p>示例如下</p><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//程序 1.26    计算渐进时间复杂度的程序示例</span><span class="token keyword">void</span> <span class="token function">example</span><span class="token punctuation">(</span><span class="token keyword">float</span> x<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> m<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">float</span> sum<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i<span class="token punctuation">,</span>j<span class="token punctuation">;</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0.0</span><span class="token punctuation">;</span>        <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>            sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//计算第 i 行的元素和</span>        <span class="token punctuation">}</span>    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>        cout<span class="token operator">&lt;&lt;</span><span class="token string">"Line"</span><span class="token operator">&lt;&lt;</span>i<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token operator">&lt;&lt;</span>sum<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//打印第 i 行的累加和</span><span class="token punctuation">}</span></code></pre><p>根据加法规则，该程序的渐进时间复杂度为 $O(\max{m\times n,m})$ 。</p><p><strong>2、乘法规则：</strong> 如果存在多层的嵌套循环，关键操作应在最内层循环中。先自外向内层层分析每层循环的渐进时间复杂度，然后利用大 $O$ 表示法来计算其渐进时间复杂度。也就是说，当两个嵌套的程序段的时间代价分别是 $T_1(n)=O(f(n))$ 和 $T_2(m)=O(g(m))$ 时，那么整个时间段的时间代价为<br>$$T(n,m)=T_1(n)\times T_2(m)=O(f(n)\times g(m))$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 时间复杂度 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git基本操作01</title>
       <link href="/2019/09/14/gitnote/"/>
       <url>/2019/09/14/gitnote/</url>
