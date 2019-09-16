@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sikiGray.github.io/"/>
-  <updated>2019-09-16T11:09:52.268Z</updated>
+  <updated>2019-09-16T11:19:52.648Z</updated>
   <id>http://sikiGray.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://sikiGray.github.io/2019/09/16/shu-ju-jie-gou-suan-fa-de-jian-jin-fen-xi-jian-jin-shi-jian-fu-za-du/"/>
     <id>http://sikiGray.github.io/2019/09/16/shu-ju-jie-gou-suan-fa-de-jian-jin-fen-xi-jian-jin-shi-jian-fu-za-du/</id>
     <published>2019-09-16T10:53:58.887Z</published>
-    <updated>2019-09-16T11:09:52.268Z</updated>
+    <updated>2019-09-16T11:19:52.648Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;blockquote&gt;
-&lt;p&gt;&amp;emsp;算法的渐进分析（asymptotic algorithm analysis）简称算法分析。算法分析直接与它所求解的问题的规模 n
+          &lt;h1 id=&quot;渐进的时间复杂度&quot;&gt;&lt;a href=&quot;#渐进的时间复杂度&quot; class=&quot;headerlink&quot;
         
       
     
